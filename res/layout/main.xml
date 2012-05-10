@@ -6,14 +6,40 @@
 
     <include layout="@layout/head" />
 
-    <include layout="@layout/foot" />
-
     <ViewFlipper
         android:id="@+id/centerFlipper"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/bottomSection"
         android:layout_below="@id/topSection" >
+
+        <TabHost
+            android:id="@+id/tabhost"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentBottom="true" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <FrameLayout
+                    android:id="@android:id/tabcontent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_above="@android:id/tabs" >
+                </FrameLayout>
+
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true" >
+                </TabWidget>
+            </RelativeLayout>
+        </TabHost>
     </ViewFlipper>
+
+    <include layout="@layout/foot" />
 
 </RelativeLayout>

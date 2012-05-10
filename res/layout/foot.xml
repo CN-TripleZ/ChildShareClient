@@ -2,28 +2,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/bottomSection"
     android:layout_width="fill_parent"
-    android:layout_height="60dip"
+    android:layout_height="48dp"
     android:layout_alignParentBottom="true"
     android:background="@drawable/top_bg_repeat"
     android:gravity="center"
     android:orientation="horizontal" >
 
-    <ImageView
+    <ImageButton
         android:layout_width="72dp"
         android:layout_height="48dp"
         android:src="@drawable/tab_home" />
 
-    <ImageView
+    <ImageButton
         android:layout_width="72dp"
         android:layout_height="48dp"
         android:src="@drawable/tab_hot" />
 
-    <ImageView
+    <ImageButton
         android:layout_width="72dp"
         android:layout_height="48dp"
         android:src="@drawable/tab_camera" />
 
-    <ImageView
+    <ImageButton
         android:layout_width="72dp"
         android:layout_height="48dp"
         android:src="@drawable/tab_account" />
