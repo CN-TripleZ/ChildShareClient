@@ -1,13 +1,30 @@
 package com.qinzi.activity;
 
+import android.app.Activity;
 import android.app.ActivityGroup;
 import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.Log;
+import android.view.View;
 import android.view.Window;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.TabHost;
 
+import com.qinzi.dialog.CommonActivityDialog;
+import com.qinzi.dialog.DialogFactory;
+
 public class MainActivity extends ActivityGroup {
-	/** Called when the activity is first created. */
+	
+	private CommonActivityDialog dialog;
+	
+	private Button cameraButton;
+	
+	private Button albumButton;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -38,5 +55,48 @@ public class MainActivity extends ActivityGroup {
         tabHost.addTab(spec);
 
 		tabHost.setCurrentTab(1);
+		
+		dialog = DialogFactory.getInstance().getCameraDialog(MainActivity.this);
+		cameraButton = (Button) dialog.getDialog().findViewById(R.id.cameraButton);
+		albumButton = (Button) dialog.getDialog().findViewById(R.id.albumButton);
+		cameraButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				dialog.dismiss();
+				Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+				startActivityForResult(intent, 0);
+			}
+		});
+		albumButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				dialog.dismiss();
+				Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
+				intent.setType("image/*");
+				startActivityForResult(intent, 0);
+			}
+		});
+	}
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if(resultCode != Activity.RESULT_OK) {
+			return;
+		}
+		Uri uri = data.getData();
+		String imgePath = getPath(uri);
+		switch (requestCode) {
+			case 0:
+			case 1:
+			default:
+		}
+		Log.v("imgePath", "====>" + imgePath);
+	}
+
+	public String getPath(Uri uri){
+		String[] projection = { MediaStore.Images.Media.DATA };
+		Cursor cursor = managedQuery(uri, projection, null, null, null);
+		int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+		cursor.moveToFirst();
+		return cursor.getString(column_index);
 	}
 }
