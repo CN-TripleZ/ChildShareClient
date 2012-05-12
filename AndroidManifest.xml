@@ -10,12 +10,22 @@
         android:icon="@drawable/child_icon"
         android:label="@string/app_name" >
         <activity
-            android:label="@string/app_name"
             android:name=".StartActivity" >
         </activity>
         <activity
-            android:label="@string/app_name"
             android:name=".MainActivity" >
+        </activity>
+        <activity
+            android:name=".ListActivity" >
+        </activity>
+        <activity
+            android:name=".HotActivity" >
+        </activity>
+        <activity
+            android:name=".CameraActivity" >
+        </activity>
+        <activity
+            android:name=".AccountActivity" >
         </activity>
         <activity android:name=".Splash" >
             <intent-filter >
