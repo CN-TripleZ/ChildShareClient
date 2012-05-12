@@ -1,4 +1,4 @@
-package com.framework.page;
+package com.qinzi.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
