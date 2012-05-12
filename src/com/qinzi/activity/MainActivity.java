@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TabHost;
 
 import com.qinzi.dialog.CommonActivityDialog;
@@ -56,9 +57,17 @@ public class MainActivity extends ActivityGroup {
 
 		tabHost.setCurrentTab(1);
 		
+		ImageButton camera = (ImageButton)super.findViewById(R.id.camera);
 		dialog = DialogFactory.getInstance().getCameraDialog(MainActivity.this);
 		cameraButton = (Button) dialog.getDialog().findViewById(R.id.cameraButton);
 		albumButton = (Button) dialog.getDialog().findViewById(R.id.albumButton);
+		
+		camera.setOnClickListener(new Button.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				dialog.show();
+			}
+		});	
 		cameraButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -73,7 +82,7 @@ public class MainActivity extends ActivityGroup {
 				dialog.dismiss();
 				Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
 				intent.setType("image/*");
-				startActivityForResult(intent, 0);
+				startActivityForResult(intent, 1);
 			}
 		});
 	}
@@ -83,20 +92,15 @@ public class MainActivity extends ActivityGroup {
 			return;
 		}
 		Uri uri = data.getData();
-		String imgePath = getPath(uri);
 		switch (requestCode) {
 			case 0:
 			case 1:
 			default:
 		}
-		Log.v("imgePath", "====>" + imgePath);
+		Intent intent =  new Intent(dialog.getDialog().getContext(), PhotoActivity.class);
+		intent.setData(uri);
+		dialog.getDialog().getContext().startActivity(intent); 
+
 	}
 
-	public String getPath(Uri uri){
-		String[] projection = { MediaStore.Images.Media.DATA };
-		Cursor cursor = managedQuery(uri, projection, null, null, null);
-		int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-		cursor.moveToFirst();
-		return cursor.getString(column_index);
-	}
 }
