@@ -63,13 +63,11 @@ public class MainActivity extends ActivityGroup {
 		albumButton = (Button) dialog.getDialog().findViewById(R.id.albumButton);
 		
 		camera.setOnClickListener(new Button.OnClickListener() {
-			@Override
 			public void onClick(View v) {
 				dialog.show();
 			}
 		});	
 		cameraButton.setOnClickListener(new OnClickListener() {
-			@Override
 			public void onClick(View v) {
 				dialog.dismiss();
 				Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
@@ -77,7 +75,6 @@ public class MainActivity extends ActivityGroup {
 			}
 		});
 		albumButton.setOnClickListener(new OnClickListener() {
-			@Override
 			public void onClick(View v) {
 				dialog.dismiss();
 				Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
