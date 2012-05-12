@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>  
+<resources>
+
     <style name="CustomRadioBtn">
-    	<item name="android:button">@drawable/custom_radio_btn</item>
+        <item name="android:button">@drawable/custom_radio_btn</item>
     </style>
+
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@drawable/camera_dialog</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@+android:style/Animation.Translucent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
     <color name="white">#ffffff</color>
+    <color name="transparent">#CCCCCC</color>
+
 </resources>

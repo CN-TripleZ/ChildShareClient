@@ -1,13 +1,13 @@
-package com.framework.page;
+package com.qinzi.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
 
-public class StartActivity extends Activity {
+public class ListActivity extends Activity {
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.start);
+        setContentView(R.layout.list);
     }
 }
