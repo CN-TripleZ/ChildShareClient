@@ -44,20 +44,20 @@ public class MainActivity extends ActivityGroup {
 		spec.setContent(new Intent(this, HotActivity.class));
 		spec.setIndicator("热门");
 		tabHost.addTab(spec);
-		
+		/*
 		spec = tabHost.newTabSpec("TAB3");
         spec.setContent(new Intent(this, CameraActivity.class));
         spec.setIndicator("照相");
         tabHost.addTab(spec);
-        
+        */
         spec = tabHost.newTabSpec("TAB4");
         spec.setContent(new Intent(this, AccountActivity.class));
         spec.setIndicator("个人");
         tabHost.addTab(spec);
 
-		tabHost.setCurrentTab(1);
+		tabHost.setCurrentTab(0);
 		
-		ImageButton camera = (ImageButton)super.findViewById(R.id.camera);
+		ImageButton camera = (ImageButton)super.findViewById(R.id.tab_camera);
 		dialog = DialogFactory.getInstance().getCameraDialog(MainActivity.this);
 		cameraButton = (Button) dialog.getDialog().findViewById(R.id.cameraButton);
 		albumButton = (Button) dialog.getDialog().findViewById(R.id.albumButton);
@@ -80,6 +80,28 @@ public class MainActivity extends ActivityGroup {
 				Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
 				intent.setType("image/*");
 				startActivityForResult(intent, 1);
+			}
+		});
+		
+		ImageButton tab_home = (ImageButton)super.findViewById(R.id.tab_home);
+		tab_home.setOnClickListener(new Button.OnClickListener(){
+			public void onClick(View v) {
+				TabHost tab = (TabHost) findViewById(R.id.tabhost);
+				tab.setCurrentTab(0);
+			}
+		});
+		ImageButton tab_hot = (ImageButton)super.findViewById(R.id.tab_hot);
+		tab_hot.setOnClickListener(new Button.OnClickListener(){
+			public void onClick(View v) {
+				TabHost tab = (TabHost) findViewById(R.id.tabhost);
+				tab.setCurrentTab(1);
+			}
+		});
+		ImageButton tab_account = (ImageButton)super.findViewById(R.id.tab_account);
+		tab_account.setOnClickListener(new Button.OnClickListener(){
+			public void onClick(View v) {
+				TabHost tab = (TabHost) findViewById(R.id.tabhost);
+				tab.setCurrentTab(2);
 			}
 		});
 	}

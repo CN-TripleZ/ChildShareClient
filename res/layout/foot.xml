@@ -9,22 +9,25 @@
     android:orientation="horizontal" >
 
     <ImageButton
+        android:id="@+id/tab_home"
         android:layout_width="72dp"
         android:layout_height="48dp"
         android:src="@drawable/tab_home" />
 
     <ImageButton
+        android:id="@+id/tab_hot"
         android:layout_width="72dp"
         android:layout_height="48dp"
         android:src="@drawable/tab_hot" />
 
     <ImageButton
-        android:id="@+id/camera"
+        android:id="@+id/tab_camera"
         android:layout_width="72dp"
         android:layout_height="48dp"
         android:src="@drawable/tab_camera" />
 
     <ImageButton
+        android:id="@+id/tab_account"
         android:layout_width="72dp"
         android:layout_height="48dp"
         android:src="@drawable/tab_account" />
