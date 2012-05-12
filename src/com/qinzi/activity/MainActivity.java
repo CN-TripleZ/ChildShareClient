@@ -99,7 +99,7 @@ public class MainActivity extends ActivityGroup {
 		}
 		Intent intent =  new Intent(dialog.getDialog().getContext(), PhotoActivity.class);
 		intent.setData(uri);
-		dialog.getDialog().getContext().startActivity(intent); 
+		this.startActivity(intent); 
 
 	}
 
