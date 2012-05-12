@@ -27,6 +27,9 @@
         <activity
             android:name=".AccountActivity" >
         </activity>
+        <activity
+            android:name=".PhotoActivity" >
+        </activity>
         <activity android:name=".Splash" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
