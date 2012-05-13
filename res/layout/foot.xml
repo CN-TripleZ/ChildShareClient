@@ -31,5 +31,11 @@
         android:layout_width="72dp"
         android:layout_height="48dp"
         android:src="@drawable/tab_account" />
+    
+    <ImageButton
+        android:id="@+id/tab_login"
+        android:layout_width="72dp"
+        android:layout_height="48dp"
+        android:src="@drawable/tab_login" />
 
 </LinearLayout>
