@@ -3,4 +3,17 @@
 
     <string name="hello">Hello World, StartActivity!</string>
     <string name="app_name">亲子卷轴</string>
+    
+    
+    <string name="attention">注意</string>
+    <string name="delete_all">是否要删除这条微博？</string>
+    <string name="ok">是</string>
+    <string name="cancel">否</string>
+    <string name="send">发送</string>
+    <string name="close">关闭</string>
+    <string name="share_dialog_title">新浪微博</string>
+    <string name="please_login">请登录！</string>
+    <string name="send_sucess">分享成功！</string>
+    <string name="send_failed">分享失败！</string>
+    <string name="del_pic">是否删除图片？</string>
 </resources>
