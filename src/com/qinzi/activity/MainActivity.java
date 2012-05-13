@@ -12,8 +12,8 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TabHost;
@@ -31,7 +31,7 @@ public class MainActivity extends ActivityGroup {
 	private Button albumButton;
 	
 	enum TAB_TAG {
-		HOME, HOT, ACCOUNT
+		HOME, HOT, ACCOUNT, LOGIN
 	}
 	
 	@Override
@@ -61,6 +61,11 @@ public class MainActivity extends ActivityGroup {
         spec = tabHost.newTabSpec(TAB_TAG.ACCOUNT.name());
         spec.setContent(new Intent(this, AccountActivity.class));
         spec.setIndicator(TAB_TAG.ACCOUNT.name());
+        tabHost.addTab(spec);
+        
+        spec = tabHost.newTabSpec(TAB_TAG.LOGIN.name());
+        spec.setContent(new Intent(this, WeiboAuthorizeActivity.class));
+        spec.setIndicator(TAB_TAG.LOGIN.name());
         tabHost.addTab(spec);
 
 		tabHost.setCurrentTabByTag(TAB_TAG.HOME.name());
@@ -111,6 +116,14 @@ public class MainActivity extends ActivityGroup {
 			public void onClick(View v) {
 				TabHost tab = (TabHost) findViewById(R.id.tabhost);
 				tab.setCurrentTabByTag(TAB_TAG.ACCOUNT.name());
+			}
+		});
+		
+		ImageButton tab_login = (ImageButton)super.findViewById(R.id.tab_login);
+		tab_login.setOnClickListener(new Button.OnClickListener(){
+			public void onClick(View v) {
+				TabHost tab = (TabHost) findViewById(R.id.tabhost);
+				tab.setCurrentTabByTag(TAB_TAG.LOGIN.name());
 			}
 		});
 	}
