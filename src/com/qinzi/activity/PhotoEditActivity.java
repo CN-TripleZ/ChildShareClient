@@ -1,14 +1,9 @@
 package com.qinzi.activity;
 
-import java.io.File;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
@@ -42,7 +37,6 @@ public class PhotoEditActivity extends Activity{
 		}
 		
 		goButton.setOnClickListener(new OnClickListener() {
-			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent();
 				intent.setClass(PhotoEditActivity.this, PhotoUploadActivity.class);
