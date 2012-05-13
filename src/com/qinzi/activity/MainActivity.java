@@ -30,6 +30,10 @@ public class MainActivity extends ActivityGroup {
 	
 	private Button albumButton;
 	
+	enum TAB_TAG {
+		HOME, HOT, ACCOUNT
+	}
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -39,14 +43,14 @@ public class MainActivity extends ActivityGroup {
 		TabHost tabHost = (TabHost) findViewById(R.id.tabhost);
 		tabHost.setup(this.getLocalActivityManager());
 
-		TabHost.TabSpec spec = tabHost.newTabSpec("TAB1");
+		TabHost.TabSpec spec = tabHost.newTabSpec(TAB_TAG.HOME.name());
 		spec.setContent(new Intent(this, ListActivity.class));
-		spec.setIndicator("首页");
+		spec.setIndicator(TAB_TAG.HOME.name());
 		tabHost.addTab(spec);
 
-		spec = tabHost.newTabSpec("TAB2");
+		spec = tabHost.newTabSpec(TAB_TAG.HOT.name());
 		spec.setContent(new Intent(this, HotActivity.class));
-		spec.setIndicator("热门");
+		spec.setIndicator(TAB_TAG.HOT.name());
 		tabHost.addTab(spec);
 		/*
 		spec = tabHost.newTabSpec("TAB3");
@@ -54,12 +58,12 @@ public class MainActivity extends ActivityGroup {
         spec.setIndicator("照相");
         tabHost.addTab(spec);
         */
-        spec = tabHost.newTabSpec("TAB4");
+        spec = tabHost.newTabSpec(TAB_TAG.ACCOUNT.name());
         spec.setContent(new Intent(this, AccountActivity.class));
-        spec.setIndicator("个人");
+        spec.setIndicator(TAB_TAG.ACCOUNT.name());
         tabHost.addTab(spec);
 
-		tabHost.setCurrentTab(0);
+		tabHost.setCurrentTabByTag(TAB_TAG.HOME.name());
 		
 		ImageButton camera = (ImageButton)super.findViewById(R.id.tab_camera);
 		dialog = DialogFactory.getInstance().getCameraDialog(MainActivity.this);
@@ -92,21 +96,21 @@ public class MainActivity extends ActivityGroup {
 		tab_home.setOnClickListener(new Button.OnClickListener(){
 			public void onClick(View v) {
 				TabHost tab = (TabHost) findViewById(R.id.tabhost);
-				tab.setCurrentTab(0);
+				tab.setCurrentTabByTag(TAB_TAG.HOME.name());
 			}
 		});
 		ImageButton tab_hot = (ImageButton)super.findViewById(R.id.tab_hot);
 		tab_hot.setOnClickListener(new Button.OnClickListener(){
 			public void onClick(View v) {
 				TabHost tab = (TabHost) findViewById(R.id.tabhost);
-				tab.setCurrentTab(1);
+				tab.setCurrentTabByTag(TAB_TAG.HOT.name());
 			}
 		});
 		ImageButton tab_account = (ImageButton)super.findViewById(R.id.tab_account);
 		tab_account.setOnClickListener(new Button.OnClickListener(){
 			public void onClick(View v) {
 				TabHost tab = (TabHost) findViewById(R.id.tabhost);
-				tab.setCurrentTab(2);
+				tab.setCurrentTabByTag(TAB_TAG.ACCOUNT.name());
 			}
 		});
 	}
