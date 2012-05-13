@@ -176,9 +176,18 @@ public class MainActivity extends ActivityGroup {
 		intent.putExtra("crop", "true");
 		intent.putExtra("aspectX", 1);
 		intent.putExtra("aspectY", 1);
-		intent.putExtra("outputX", 64);
-		intent.putExtra("outputY", 64);
-		intent.putExtra("return-data", true);
+		intent.putExtra("outputX", 128);
+		intent.putExtra("outputY", 128);
+		intent.putExtra("scale", true);    
+		intent.putExtra("return-data", true);//如果返回uri需注释掉
+//		String filePath = getApplicationContext().getFilesDir().getPath() + File.separator + "jeffreyzhang";
+//		String fileName = System.currentTimeMillis() + ".jpg";
+//		File outputFile = new File(filePath, fileName);
+//		if (!outputFile.exists()) {
+//			outputFile.mkdirs();
+//		}
+//		intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(outputFile));
+//		intent.putExtra("outputFormat", Bitmap.CompressFormat.JPEG.toString());
 		startActivityForResult(intent, PhotoEditActivity.CODE_FINISHED);
 	}
 
