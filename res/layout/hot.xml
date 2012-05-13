@@ -1,24 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-<ListView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:text="Hot" />
-
-</ListView>
--->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <TextView
+    <GridView
+        android:id="@+id/hot_images"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:text="Hot" />
+        android:numColumns="3" >
+    </GridView>
 
 </RelativeLayout>
