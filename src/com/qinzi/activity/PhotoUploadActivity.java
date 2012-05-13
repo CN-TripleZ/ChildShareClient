@@ -20,6 +20,8 @@ import org.apache.http.entity.mime.content.FileBody;
 import org.apache.http.entity.mime.content.StringBody;
 import org.apache.http.impl.client.DefaultHttpClient;
 
+import com.qinzi.constants.Url;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -57,7 +59,7 @@ public class PhotoUploadActivity extends Activity {
 
 	private void uploadFile() {
 
-		String uploadUrl = "http://192.168.1.35:8080/child_share/ImageServlet?cmd=add&userId=jeffreyzhang";
+		String uploadUrl = Url.DOMAIN_URL + "/ImageServlet?cmd=add&userId=jeffreyzhang";
 		
 		String userId = "jeffreyzhang";
 		String desc = description.getText().toString();
@@ -129,7 +131,7 @@ public class PhotoUploadActivity extends Activity {
 	private void uploadFile1() {
 		HttpClient httpclient = new DefaultHttpClient();
 		try {
-			HttpPost httppost = new HttpPost("http://192.168.1.35:8080/child_share/ImageServlet?cmd=add");
+			HttpPost httppost = new HttpPost(Url.DOMAIN_URL + "/ImageServlet?cmd=add");
 
 			FileBody bin = new FileBody(new File(imagePath));
 
