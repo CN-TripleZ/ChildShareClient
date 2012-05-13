@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/topSection"
     android:layout_width="fill_parent"
-    android:layout_height="48dip"
+    android:layout_height="wrap_content"
     android:layout_alignParentTop="true"
     android:background="@drawable/top_bg_repeat"
     android:gravity="center"
@@ -15,7 +15,7 @@
         android:text="@string/app_name"
         android:textColor="@android:color/white"
         android:textSize="20dip" />
-
+<!-- 
     <RadioGroup
         android:id="@+id/topRadioGroup"
         android:layout_width="wrap_content"
@@ -35,5 +35,5 @@
             style="@style/CustomRadioBtn"
             android:gravity="center" />
     </RadioGroup>
-
+ -->
 </LinearLayout>
