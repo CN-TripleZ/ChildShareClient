@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <!-- 头部菜单开始 -->
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/topSection"
+        android:layout_width="fill_parent"
+        android:layout_height="48dip"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/top_bg_repeat"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:layout_width="72dp"
+            android:layout_height="48dp"
+            android:src="@drawable/tab_home" />
+
+        <ImageButton
+            android:layout_width="72dp"
+            android:layout_height="48dp"
+            android:src="@drawable/tab_hot" />
+
+        <ImageButton
+            android:id="@+id/camera"
+            android:layout_width="72dp"
+            android:layout_height="48dp"
+            android:src="@drawable/tab_camera" />
+
+        <ImageButton
+            android:id="@+id/go"
+            android:layout_width="72dp"
+            android:layout_height="48dp"
+            android:src="@drawable/tab_account" />
+    </LinearLayout>
+    <!-- 头部菜单结束 -->
+
+
+    <!-- 底部菜单开始 -->
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:layout_width="72dp"
+                android:layout_height="48dp"
+                android:src="@drawable/tab_home" />
+
+            <ImageButton
+                android:layout_width="72dp"
+                android:layout_height="48dp"
+                android:src="@drawable/tab_hot" />
+
+            <ImageButton
+                android:id="@+id/camera"
+                android:layout_width="72dp"
+                android:layout_height="48dp"
+                android:src="@drawable/tab_camera" />
+
+            <ImageButton
+                android:layout_width="72dp"
+                android:layout_height="48dp"
+                android:src="@drawable/tab_account" />
+
+            <ImageButton
+                android:layout_width="72dp"
+                android:layout_height="48dp"
+                android:src="@drawable/tab_home" />
+
+            <ImageButton
+                android:layout_width="72dp"
+                android:layout_height="48dp"
+                android:src="@drawable/tab_hot" />
+
+            <ImageButton
+                android:id="@+id/camera"
+                android:layout_width="72dp"
+                android:layout_height="48dp"
+                android:src="@drawable/tab_camera" />
+
+            <ImageButton
+                android:layout_width="72dp"
+                android:layout_height="48dp"
+                android:src="@drawable/tab_account" />
+
+            <ImageButton
+                android:layout_width="72dp"
+                android:layout_height="48dp"
+                android:src="@drawable/tab_home" />
+
+            <ImageButton
+                android:layout_width="72dp"
+                android:layout_height="48dp"
+                android:src="@drawable/tab_hot" />
+
+            <ImageButton
+                android:id="@+id/camera"
+                android:layout_width="72dp"
+                android:layout_height="48dp"
+                android:src="@drawable/tab_camera" />
+
+            <ImageButton
+                android:layout_width="72dp"
+                android:layout_height="48dp"
+                android:src="@drawable/tab_account" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- 底部菜单结束 -->
+
+    <ImageView
+        android:id="@+id/photoView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/child_icon" />
+
+</RelativeLayout>

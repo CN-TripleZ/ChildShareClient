@@ -11,7 +11,7 @@ public class CommonActivityDialog {
 	public CommonActivityDialog(Context context, int style, int layoutId) {
 		dialog = new Dialog(context, style);
 		dialog.setContentView(layoutId);
-		dialog.setFeatureDrawableAlpha(Window.FEATURE_OPTIONS_PANEL, 1);
+//		dialog.setFeatureDrawableAlpha(Window.FEATURE_OPTIONS_PANEL, 1);
 	}
 
 	public void show() {

@@ -12,9 +12,17 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <TextView
+    <ListView
+        android:id="@+id/Msglist"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:text="List" />
+        android:layout_margin="0px"
+        android:background="#BBFFFFFF"
+        android:cacheColorHint="#00000000"
+        android:divider="@drawable/divider"
+        android:dividerHeight="2px"
+        android:fastScrollEnabled="true"
+        android:focusable="true" >
+    </ListView>
 
 </RelativeLayout>
