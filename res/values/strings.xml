@@ -3,7 +3,9 @@
 
     <string name="hello">Hello World, StartActivity!</string>
     <string name="app_name">亲子卷轴</string>
-    
+    <string name="hot">热门</string>
+    <string name="account">个人</string>
+    <string name="login">登录</string>
     
     <string name="attention">注意</string>
     <string name="delete_all">是否要删除这条微博？</string>

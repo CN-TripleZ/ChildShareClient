@@ -125,13 +125,24 @@ public class ListActivity extends Activity {
 			if (asyncImageLoader == null) {
 				asyncImageLoader = new AsyncImageLoader();
 			}
-			convertView = LayoutInflater.from(getApplicationContext()).inflate(
-					R.layout.item_info, null);
-
+			if (position % 2 == 0) {
+				convertView = LayoutInflater.from(getApplicationContext()).inflate(
+						R.layout.item_img_left, null);
+			} else {
+				convertView = LayoutInflater.from(getApplicationContext()).inflate(
+						R.layout.item_img_right, null);
+			}
+			
 			ItemHolder itemHolder = new ItemHolder();
-			itemHolder.image = (ImageView) convertView.findViewById(R.id.item_image);
-			itemHolder.time = (TextView) convertView.findViewById(R.id.item_time);
-			itemHolder.text = (TextView) convertView.findViewById(R.id.item_text);
+			if (position % 2 == 0) {
+				itemHolder.image = (ImageView) convertView.findViewById(R.id.item_image);
+				itemHolder.time = (TextView) convertView.findViewById(R.id.item_time);
+				itemHolder.text = (TextView) convertView.findViewById(R.id.item_text);
+			} else {
+				itemHolder.image = (ImageView) convertView.findViewById(R.id.item_image_right);
+				itemHolder.time = (TextView) convertView.findViewById(R.id.item_time_right);
+				itemHolder.text = (TextView) convertView.findViewById(R.id.item_text_right);
+			}
 			
 			ItemInfo item = share_items.get(position);
 			

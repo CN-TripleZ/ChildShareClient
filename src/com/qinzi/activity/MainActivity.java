@@ -17,6 +17,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TabHost;
+import android.widget.TextView;
 
 import com.qinzi.dialog.CommonActivityDialog;
 import com.qinzi.dialog.DialogFactory;
@@ -102,6 +103,8 @@ public class MainActivity extends ActivityGroup {
 			public void onClick(View v) {
 				TabHost tab = (TabHost) findViewById(R.id.tabhost);
 				tab.setCurrentTabByTag(TAB_TAG.HOME.name());
+				TextView title = (TextView)findViewById(R.id.title);
+				title.setText(getText(R.string.app_name));
 			}
 		});
 		ImageButton tab_hot = (ImageButton)super.findViewById(R.id.tab_hot);
@@ -109,6 +112,8 @@ public class MainActivity extends ActivityGroup {
 			public void onClick(View v) {
 				TabHost tab = (TabHost) findViewById(R.id.tabhost);
 				tab.setCurrentTabByTag(TAB_TAG.HOT.name());
+				TextView title = (TextView)findViewById(R.id.title);
+				title.setText(getText(R.string.hot));
 			}
 		});
 		ImageButton tab_account = (ImageButton)super.findViewById(R.id.tab_account);
@@ -116,6 +121,8 @@ public class MainActivity extends ActivityGroup {
 			public void onClick(View v) {
 				TabHost tab = (TabHost) findViewById(R.id.tabhost);
 				tab.setCurrentTabByTag(TAB_TAG.ACCOUNT.name());
+				TextView title = (TextView)findViewById(R.id.title);
+				title.setText(getText(R.string.account));
 			}
 		});
 		
@@ -124,6 +131,8 @@ public class MainActivity extends ActivityGroup {
 			public void onClick(View v) {
 				TabHost tab = (TabHost) findViewById(R.id.tabhost);
 				tab.setCurrentTabByTag(TAB_TAG.LOGIN.name());
+				TextView title = (TextView)findViewById(R.id.title);
+				title.setText(getText(R.string.login));
 			}
 		});
 	}
