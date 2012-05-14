@@ -116,7 +116,9 @@ public class HotActivity extends Activity {
 		}
 
 		public View getView(int position, View convertView, ViewGroup parent) {
-			asyncImageLoader = new AsyncImageLoader();
+			if (asyncImageLoader == null) {
+				asyncImageLoader = new AsyncImageLoader();
+			}
 			convertView = LayoutInflater.from(getApplicationContext()).inflate(
 					R.layout.hot_item, null);
 
