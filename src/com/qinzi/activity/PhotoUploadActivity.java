@@ -59,7 +59,7 @@ public class PhotoUploadActivity extends Activity {
 
 	private void uploadFile() {
 
-		String uploadUrl = Url.DOMAIN_URL + "/ImageServlet?cmd=add&userId=jeffreyzhang";
+		String uploadUrl = Url.DOMAIN_URL + "child_share/ImageServlet?cmd=add&userId=jeffreyzhang";
 		
 		String userId = "jeffreyzhang";
 		String desc = description.getText().toString();
@@ -131,7 +131,7 @@ public class PhotoUploadActivity extends Activity {
 	private void uploadFile1() {
 		HttpClient httpclient = new DefaultHttpClient();
 		try {
-			HttpPost httppost = new HttpPost(Url.DOMAIN_URL + "/ImageServlet?cmd=add");
+			HttpPost httppost = new HttpPost(Url.DOMAIN_URL + "child_share/ImageServlet?cmd=add");
 
 			FileBody bin = new FileBody(new File(imagePath));
 
