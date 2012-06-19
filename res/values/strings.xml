@@ -6,6 +6,7 @@
     <string name="hot">热门</string>
     <string name="account">个人</string>
     <string name="login">登录</string>
+    <string name="regist">注册</string>
     
     <string name="attention">注意</string>
     <string name="delete_all">是否要删除这条微博？</string>
@@ -18,4 +19,9 @@
     <string name="send_sucess">分享成功！</string>
     <string name="send_failed">分享失败！</string>
     <string name="del_pic">是否删除图片？</string>
+    
+    <string name="login_bg">登录背景</string>
+    
+    <string name="more">更多</string>
+    <string name="friends">朋友</string>
 </resources>
