@@ -33,6 +33,9 @@
         <activity
             android:name=".AccountActivity" >
         </activity>
+        <activity 
+            android:name=".Layout2Activity">
+        </activity>
         <activity
             android:name=".PhotoEditActivity" >
         </activity>
