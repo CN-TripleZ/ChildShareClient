@@ -41,7 +41,7 @@ public class Splash extends Activity {
 
 			public void onAnimationEnd(Animation animation) {
 				// TODO Auto-generated method stub
-				Intent it = new Intent(Splash.this, MainActivity.class);
+				Intent it = new Intent(Splash.this, Layout2Activity.class);
 				startActivity(it);
 				finish();
 			}
